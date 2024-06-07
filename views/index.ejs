@@ -1,0 +1,24 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+    <div class="pricing-container">
+
+      <div class="pricing-plan"> 
+      
+        <div class="plan-title"><%= title %></div> 
+        <div class="plan-price"> by <%= name %>  published in <%= year %> </div>
+        <div class="plan-photo"> <img src="images/cat.jpeg" alt="Image of a phone taken" 
+          class = "plan-image"/>
+        <p class="plan-features"> <%= text %>...</p>
+          </div>  
+        
+
+        <form action="/edit" method="GET">
+            <input type="submit" value="view more..."></button>
+        </form>  
+      </div>
+
+    </div>
+  </body>
+
+  <%- include("partials/footer.ejs") %>

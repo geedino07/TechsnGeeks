@@ -1,0 +1,96 @@
+
+body {
+    font-family: "Sono", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+header,
+footer {
+  flex: 0 0 auto;
+}
+
+  
+
+  .pricing-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    gap: 4rem;
+  }
+  
+  .pricing-plan {
+      flex: 1;
+      min-width: 900px;
+      max-width: 1000px;
+      padding: 20px;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      text-align: center;
+    }
+  
+  
+    .plan-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      
+    }
+  
+    .plan-price{
+      font-style: italic;
+      color: burlywood;
+      font-size: small;
+    }
+  
+    .plan-photo{
+      display: flex;
+    }
+    
+      .plan-image  {
+        height: 200px;
+        width: 200px;
+        object-fit: cover;
+        border-radius: 20%;
+        /* display: inline-block;   */
+      }
+
+      .edit{
+        padding: 10px;
+      }
+    
+    .plan-button {
+      background-color: #ff6600;
+      color: #fff;
+      border: none;
+      /* background: #3E234F; */
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 7px;
+      text-transform: capitalize;
+      transition: all 0.3s ease-in-out;
+    }
+  
+    .plan-features {
+      list-style: none;
+      padding: 20px;
+      margin: 0;
+    }
+
+    input {
+      background-color: #ff6600;
+      color: #fff;
+      border: none;
+      /* background: #3E234F; */
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 7px;
+      text-transform: capitalize;
+      transition: all 0.3s ease-in-out;
+    }
+  /* Hint: What can you do with a media query and flexbox? */
+  @media (max-width: 1250px) {
+  }
+  
