@@ -1,1 +1,1 @@
-Blogs on Ai and FullStack using react and nodejs
+Blogs for FullStack using react and nodejs
