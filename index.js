@@ -16,34 +16,35 @@ var content = '';
 
 
 app.get("/", (req, res) => {
-fs.readFile(__dirname+"/data/title.txt", "utf8", (err, data) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
-    title = data;
-    console.log(title);
-})
+    fs.readFile(__dirname+"/data/title.txt", "utf8", (err, data) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
+        title = data;
+        console.log(title);
+    })
+        
+     fs.readFile(__dirname+"/data/author.txt", "utf8", (err, data) => {
+        if (err) throw err;
+        name = data;
+        console.log(name);
+     });
+     
+     fs.readFile(__dirname+"/data/content.txt", "utf8", (err, data) => {
+        if (err) throw err;
+        content = data;
+        console.log(content);
+     });
     
- fs.readFile(__dirname+"/data/author.txt", "utf8", (err, data) => {
-    if (err) throw err;
-    name = data;
-    console.log(name);
- });
- 
- fs.readFile(__dirname+"/data/content.txt", "utf8", (err, data) => {
-    if (err) throw err;
-    content = data;
-    console.log(content);
- });
-
- const body={
-    title: title,
-    name: name,
-    text: content,
-    year: new Date().getFullYear(),
-
-};
+    const body={
+        title: title,
+        name: name,
+        text: content,
+        year: new Date().getFullYear(),
+    
+    };
+    
   res.render("index.ejs", body);
 });
 
@@ -66,16 +67,35 @@ app.get("/edit", (req, res) => {
         console.log(content);
     })
 
-    const data = {
+    const body = {
         title: title,
         name: name,
         text: content,
     }
 
-    res.render("edit.ejs", data);
+    res.render("edit.ejs", body);
 })
 
 app.post("/", (req, res) => {
+    fs.readFile(__dirname + "/data/title.txt", "utf8", (err, data) => {
+        if (err) throw err;
+        title = data;
+        console.log(title);
+    })
+     fs.readFile(__dirname + "/data/author.txt", "utf8", (err, data) => {
+        if (err) throw err;
+        name = data;
+        console.log(name);
+    })
+
+    fs.readFile(__dirname +"/data/content.txt", "utf8", (err, data) => {
+        if (err) throw err;
+        content = data;
+        console.log(content);
+    })
+
+   
+    
     const body={
         title: req.body["title"],
         name: req.body["name"],
@@ -86,9 +106,9 @@ app.post("/", (req, res) => {
     };
 
     const body2={
-        title: "",
-        name: "",
-        text: "",
+        title: title,
+        name: name,
+        text: content,
         year: new Date().getFullYear(),
         submit: req.body["submit"],
     }

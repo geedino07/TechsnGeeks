@@ -1,1 +1,1 @@
-Techs
+Blogs on Ai and FullStack using react and nodejs

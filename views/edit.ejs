@@ -10,9 +10,9 @@
         <!-- <p class="plan-features"> Andrea Tsurumi (they/them)</p> -->
         
           <form action="/" method="POST">
-            <input name="title" type="text" class="feedback-input" placeholder="Title" value= <%=title %> />
-            <input name="name" type="text" class="feedback-input" placeholder="Author" />
-            <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+            <input name="title" type="text" class="feedback-input" placeholder="Title" value="<%= title  %>" />
+            <input name="name" type="text" class="feedback-input" placeholder="Author" value="<%= name %>" />
+            <textarea name="text" class="feedback-input" placeholder="Comment"><%= text %></textarea>
             <input type="submit" value="SUBMIT" name="submit" />
             <input type="submit" value="CANCEL" name="submit"/>
           </form>
